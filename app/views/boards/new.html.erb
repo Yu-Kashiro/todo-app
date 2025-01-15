@@ -1,9 +1,14 @@
 <div class=container>
+  <h1>New Board</h1>
   <%= form_with(model: @board, url: boards_path, method: 'post', local: true) do |f| %>
-    <%= f.label :title, 'title' %>
+    <%= f.label :title, 'Name' %>
+    <br>
     <%= f.text_field :title %>
-    <%= f.label :content, 'content' %>
+    <br>
+    <%= f.label :content, 'Description' %>
+    <br>
     <%= f.text_area :content %>
+    <br>
     <%= f.submit "Submit" %>
   <% end %>
 </div>

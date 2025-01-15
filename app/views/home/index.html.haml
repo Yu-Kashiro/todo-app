@@ -1,0 +1,9 @@
+- @boards.each do |board|
+  = board.title
+  = board.content
+  = board.user_id
+  %br/
+  = link_to 'Show', board_path(board)
+  = link_to 'Edit', edit_board_path(board)
+  = link_to 'Destroy', board_path(board), method: :delete, data: { confirm: 'Are you sure?' }
+%end
