@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+10.times do
+  Board.create!(
+    title: Faker::JapaneseMedia::Naruto.character,
+    content: Faker::JapaneseMedia::Naruto.eye,
+    user_id: 2
+    )
+end
