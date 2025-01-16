@@ -1,4 +1,10 @@
 @import 'variables';
+@import 'form';
+@import 'buttons';
+@import 'header';
+@import 'common';
+@import 'board';
+
 
 
 html {
@@ -19,13 +25,36 @@ html {
 }
 
 body {
+  font-family: "Avenir", "Helvetica Neue", "Arial", sans-serif;
   height: 100%;
   background-color: $base-bg-color;
   font-size: 1em;
   color: $text-base-color;
 }
 
+a {
+  text-decoration: none;
+  color: $text-base-color;
+}
+
 .container {
   padding: 16px 16px;
   width: 100%;
+}
+
+.float_btn {
+  position: fixed;
+  bottom: 16px;
+  // right: 16px;
+  // width: 64px;
+  height: 64px;
+  // border-radius: 100%;
+  text-align: center;
+  background-color: $primary-color;
+  color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+
+  i {
+    margin-top: 22px;
+  }
 }

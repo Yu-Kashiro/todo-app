@@ -4,6 +4,25 @@ class BoardsController < ApplicationController
   end
 
   def new
-    @board = Board.new
+    @board = current_user.boards.build
+  end
+
+  def create
+    # @board = current_user.boards.build(params[:board])
+    # @board.user = current_user
+    # if @board.save
+    #   redirect_to boards_path
+    # else
+    #   render :new
+    # end
+  end
+
+  def show
+    @board = Board.find(params[:id])
+  end
+
+  private
+  def board_params
+    params.require(:board).permit(:name, :description)
   end
 end
