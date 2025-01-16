@@ -1,0 +1,18 @@
+.container
+  .header-sub
+    %h1 All Boards
+  .board-list
+    - @boards.each do |board|
+      = link_to board_path(id: board.id) do
+        .board-item
+          .board-title
+            = board.title
+          .board-description
+            = board.content
+          .board-footer
+            .avatar
+              = board.user_id
+    .add-board
+      .board-item
+        + Add new board
+%end
