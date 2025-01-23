@@ -9,7 +9,7 @@
 10.times do
   Board.create!(
     title: Faker::JapaneseMedia::Naruto.character,
-    content: Faker::Lorem.sentence(word_count: 30),
-    user_id: 2
+    content: Faker::Lorem.sentence(word_count: 100),
+    user_id: 3
     )
 end
