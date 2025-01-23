@@ -11,7 +11,7 @@
             = board.content
           .board-footer
             .avatar
-              - if user_signed_in?
+              - if user_signed_in? && current_user.has_written?(board)
                 = image_tag current_user.avatar_image, class: 'header_avatar'
               - else
                 = image_tag 'User.png', class: 'header_avatar'
