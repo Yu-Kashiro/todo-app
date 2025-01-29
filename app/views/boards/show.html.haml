@@ -18,3 +18,7 @@
               .dropdown-content.mini
                 = link_to '編集する', edit_board_path(task)
                 = link_to '削除する', board_path(task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+
+.container
+  .board-list
+    = link_to 'Add New Task', new_board_task_path(@board)
