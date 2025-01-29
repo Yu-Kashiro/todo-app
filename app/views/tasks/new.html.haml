@@ -1,6 +1,6 @@
 .container
   %h1 New Task
-  = form_with(model: @task, url: tasks_path, method: 'post', local: true) do |f|
+  = form_with(model: @task, url: board_tasks_path, method: 'post', local: true) do |f|
     = f.label :title, 'Name'
     %br/
     = f.text_field :title, class: 'text'
