@@ -64,10 +64,8 @@ ActiveRecord::Schema.define(version: 2025_01_23_060138) do
     t.date "deadline"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
     t.bigint "board_id"
     t.index ["board_id"], name: "index_tasks_on_board_id"
-    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

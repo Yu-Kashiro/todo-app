@@ -1,0 +1,29 @@
+.container
+  .header-sub
+    .header-title
+      %h1
+        = @task.title
+    .board-eyecatch
+      = image_tag @task.eye_catch, class: 'eyecatch'
+    .header-actions
+      -# - if user_signed_in? && current_user.has_written?(@task)
+      -#   = link_to 'Edit', edit_board_path(@board)
+      -#   = link_to 'Delete', board_path(@board), data: { method: 'delete', confirm: 'Are you sure?' }
+  .board-list
+    .board-item
+      .board-description
+        = @task.content
+      .board-footer
+        .avatar
+          = image_tag 'User.png', class: 'header_avatar'
+      - if user_signed_in? && current_user.has_written?(@task)
+        .board_detail_actions
+          .dropdown
+            = image_tag 'select.png', class: 'dropbtn'
+            .dropdown-content.mini
+              = link_to '編集する', edit_board_task_path(@task,@task)
+              = link_to '削除する', board_task_path(@task,@task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+
+-# .container
+-#   .board-list
+-#     = link_to 'Add New Comment', new_board_task_path(@board)

@@ -5,15 +5,15 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = current_user.tasks.build
+    board = Board.find(params[:board_id])
+    @task = board.tasks.build
   end
 
   def create
     board = Board.find(params[:board_id])
     @task = board.tasks.build(task_params)
-    binding.pry
     if @task.save
-      redirect_to tasks_path, notice: '作成できました'
+      redirect_to board_task_path(board,@task), notice: '作成できました'
     else
       flash.now[:error] = '作成できませんでした'
       render :new
@@ -26,7 +26,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:title, :content, :deadline, :board_id, :user_id)
+    params.require(:task).permit(:title, :content, :deadline, :board_id, :eye_catch)
   end
 
 end
