@@ -3,14 +3,18 @@
     %h1 All Tasks
   .board-list
     - @tasks.each do |task|
-      .board-item
-        .board-title
-          = task.title
-        .board-description
-          = task.content
-        .board-footer
-          .avatar
-            = image_tag task.user.avatar_image, class: 'header_avatar'
+      = link_to board_task_path(@board,task) do
+        .board-item
+          .board-eyecatch
+            - if task.eye_catch.attached?
+              = image_tag task.eye_catch, class: 'eyecatch'
+          .board-title
+            = task.title
+          .board-description
+            = task.content
+          .board-footer
+            .avatar
+              = image_tag 'User.png', class: 'header_avatar'
         - if user_signed_in? && current_user.has_written?(task)
           .board_detail_actions
             .dropdown
