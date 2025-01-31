@@ -13,4 +13,5 @@
 #  index_comments_on_task_id  (task_id)
 #
 class Comment < ApplicationRecord
+  belongs_to :task
 end

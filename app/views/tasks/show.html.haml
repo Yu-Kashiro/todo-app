@@ -24,6 +24,6 @@
               = link_to '編集する', edit_board_task_path(@task,@task)
               = link_to '削除する', board_task_path(@task,@task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
 
--# .container
--#   .board-list
--#     = link_to 'Add New Comment', new_board_task_path(@board)
+.container
+  .board-list
+    = link_to 'Add New Comment', new_board_task_comment_path(@task,@task)
