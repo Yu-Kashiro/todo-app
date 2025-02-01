@@ -1,15 +1,15 @@
 @import './variables';
 
 .btn-primary {
-  position: absolute;
-  width: 362px;
+  position: relative;
+  width: 100%;
+  top: 20px;
   height: 40px;
-  left: 30px;
-  top: 889px;
+  border-radius: 4px;
   background: #F8BD1C;
   color: white;
-  border-radius: 4px;
-  // transform: matrix(1, 0, 0, -1, 0, 0);
+  border: none;
+
 }
 
 .btn-secondary {
@@ -21,26 +21,3 @@
   padding: 16px 0;
   font-weight: bold;
 }
-
-// 元々のCSS
-// .btn-primary {
-//   background-color: $primary-color;
-//   border: none;
-//   width: 100%;
-//   text-align: center;
-//   color: white;
-//   padding: 16px 0;
-//   font-weight: bold;
-// }
-
-/* Tag */
-
-// position: absolute;
-// width: 362px;
-// height: 40px;
-// left: 30px;
-// top: 889px;
-
-// background: #F8BD1C;
-// border-radius: 4px;
-// transform: matrix(1, 0, 0, -1, 0, 0);

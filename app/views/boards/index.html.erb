@@ -1,0 +1,30 @@
+<!-- filepath: /Users/yukas/todo-app/app/views/boards/index.html.erb -->
+<div class="container">
+  <div class="header-sub">
+    <h1>All Boards</h1>
+  </div>
+  <div class="board-list">
+    <% @boards.each do |board| %>
+      <%= link_to board_path(id: board.id) do %>
+        <div class="board-item">
+          <div class="board-title">
+            <%= board.title %>
+          </div>
+          <div class="board-description">
+            <%= board.content %>
+          </div>
+          <div class="board-footer">
+            <div class="avatar">
+              <%= image_tag board.user.avatar_image, class: 'header_avatar' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <div class="add-board">
+      <%= link_to new_board_path do %>
+        + Add new board
+      <% end %>
+    </div>
+  </div>
+</div>
