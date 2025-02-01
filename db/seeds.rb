@@ -11,28 +11,40 @@
 # emily = User.create(email: 'emily@example.com', password: 'password')
 # sample = User.create(email: 'sample@sample.com', password: '.gfBziAd3PatFR')
 
-# 5.times do
-#   Board.create!(
-#     title: Faker::JapaneseMedia::Naruto.character,
-#     content: Faker::Lorem.sentence(word_count: 100),
-#     user_id: 3
-#   )
-# end
-
-# 5.times do
-#   Board.create!(
-#     title: Faker::JapaneseMedia::Naruto.character,
-#     content: Faker::Lorem.sentence(word_count: 100),
-#     user_id: 3
-#   )
-# end
-
-10.times do
-  Task.create!(
+3.times do
+  Board.create!(
     title: Faker::JapaneseMedia::Naruto.character,
-    content: Faker::Lorem.sentence(word_count: 100),
-    user_id: 3,
-    board_id: 44,
-    deadline: Faker::Date.birthday(min_age: 18, max_age: 65)
-    )
+    content: Faker::Lorem.sentence(word_count: 30),
+    deadline: Faker::Date.between(from: '2025-01-01', to: '2025-12-31'),
+    user_id: 3
+  )
 end
+
+3.times do
+  Board.create!(
+    title: Faker::JapaneseMedia::Naruto.character,
+    content: Faker::Lorem.sentence(word_count: 30),
+    deadline: Faker::Date.between(from: '2025-01-01', to: '2025-12-31'),
+    user_id: 4
+  )
+end
+
+3.times do
+  Board.create!(
+    title: Faker::JapaneseMedia::Naruto.character,
+    content: Faker::Lorem.sentence(word_count: 30),
+    deadline: Faker::Date.between(from: '2025-01-01', to: '2025-12-31'),
+    user_id: 5
+  )
+end
+
+
+# 10.times do
+#   Task.create!(
+#     title: Faker::JapaneseMedia::Naruto.character,
+#     content: Faker::Lorem.sentence(word_count: 100),
+#     user_id: 3,
+#     board_id: 44,
+#     deadline: Faker::Date.birthday(min_age: 18, max_age: 65)
+#     )
+# end
