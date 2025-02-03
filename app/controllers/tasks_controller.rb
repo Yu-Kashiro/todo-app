@@ -13,7 +13,7 @@ class TasksController < ApplicationController
     board = Board.find(params[:board_id])
     @task = board.tasks.build(task_params)
     if @task.save
-      redirect_to board_task_path(board,@task), notice: '作成できました'
+      redirect_to board_path(board), notice: '作成できました'
     else
       flash.now[:error] = '作成できませんでした'
       render :new

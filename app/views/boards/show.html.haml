@@ -14,16 +14,9 @@
           .board-description
             = task.content
           .board-footer
-            .avatar
-              = image_tag 'User.png', class: 'header_avatar'
-        -# - if user_signed_in? && current_user.has_written?(task)
-        -#   .board_detail_actions
-        -#     .dropdown
-        -#       = image_tag 'select.png', class: 'dropbtn'
-        -#       .dropdown-content.mini
-        -#         = link_to '編集する', edit_board_path(task)
-        -#         = link_to '削除する', board_path(task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
-
+            - @tasks.each do |task|
+              .avatar
+                = image_tag @board.user.avatar_image, class: 'header_avatar'
 .container
   .board-list
-    = link_to 'Add New Task', new_board_task_path(@board)
+    = link_to 'Add New Task', new_board_task_path(@board), class: 'add-board'
