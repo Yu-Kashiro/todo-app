@@ -14,9 +14,11 @@
           .board-description
             = task.content
           .board-footer
-            - @tasks.each do |task|
+            = image_tag @board.user.avatar_image, class: 'header_avatar'
+            - @comments = task.comments.all
+            - @comments.each do |comment|
               .avatar
-                = image_tag @board.user.avatar_image, class: 'header_avatar'
+                = image_tag comment.user.avatar_image, class: 'header_avatar'
 .container
   .board-list
     = link_to 'Add New Task', new_board_task_path(@board), class: 'add-board'
