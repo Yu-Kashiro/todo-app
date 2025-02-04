@@ -23,8 +23,6 @@
             = link_to '編集する', edit_board_task_path(@task,@task)
             = link_to '削除する', board_task_path, data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
 
-
-
 - @comments.each do |comment|
   .board-item
     .board-description
@@ -42,4 +40,4 @@
 
 .container
   .board-list
-    = link_to 'Add New Comment', new_board_task_comment_path(@task,@task)
+    = link_to 'Add New Comment', new_board_task_comment_path(params[:board_id],@task)

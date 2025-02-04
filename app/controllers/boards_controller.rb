@@ -33,7 +33,6 @@ class BoardsController < ApplicationController
     @board = Board.find(params[:id])
     @tasks = @board.tasks.all
     # @comments = @board.comments.all
-    binding.pry
   end
 
   def edit

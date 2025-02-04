@@ -1,6 +1,6 @@
 .container
   %h1 New Comment
-  = form_with(model: @comment, url: board_task_comments_path, method: 'post', local: true) do |f|
+  = form_with(model: @comment, url: board_task_comments_path(params[:board_id],params[:task_id]), method: 'post', local: true) do |f|
     %br/
     = f.label :content, 'Description'
     %br/
