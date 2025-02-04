@@ -19,6 +19,9 @@
             - @comments.each do |comment|
               .avatar
                 = image_tag comment.user.avatar_image, class: 'header_avatar'
+          .board-comment-count
+            = image_tag 'comment-count.png', class: 'header_avatar'
+            = task.comments.count
 .container
   .board-list
     = link_to 'Add New Task', new_board_task_path(@board), class: 'add-board'
