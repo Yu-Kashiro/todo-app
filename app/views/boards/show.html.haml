@@ -14,7 +14,7 @@
           .board-description
             = task.content
           .board-footer
-            = image_tag @board.user.avatar_image, class: 'header_avatar'
+            = image_tag task.user.avatar_image, class: 'header_avatar'
             - @comments = task.comments.all
             - @comments.each do |comment|
               .avatar

@@ -12,34 +12,34 @@
         = @task.content
       .board-footer
         .avatar
-          = image_tag 'User.png', class: 'header_avatar'
-      .board_detail_actions
-        .dropdown
-          = image_tag 'select.png', class: 'dropbtn'
-          .dropdown-content.mini
-            = link_to '編集する', edit_board_task_path(params[:board_id],@task)
-            = link_to '削除する', board_task_path, data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
-
+          = image_tag @user.avatar_image, class: 'header_avatar'
+      - if user_signed_in? && current_user.has_written_task?(@task)
+        .board_detail_actions
+          .dropdown
+            = image_tag 'select.png', class: 'dropbtn'
+            .dropdown-content.mini
+              = link_to '編集する', edit_board_task_path(params[:board_id],@task)
+              = link_to '削除する', board_task_path, data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
 
 .container
   .header-title
     %h2 Comments
 
   - @comments.each do |comment|
-    .board-item
+    .comment-item
       .board-description
         = comment.content
       .board-footer
         .avatar
-          = image_tag 'User.png', class: 'header_avatar'
-      - if user_signed_in? && current_user.has_written?(comment)
-        .board_detail_actions
-          .dropdown
-            = image_tag 'select.png', class: 'dropbtn'
-            .dropdown-content.mini
-              = link_to '編集する', edit_board_path(board)
-              = link_to '削除する', board_path(board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+          = image_tag comment.user.avatar_image, class: 'header_avatar'
+      -# - if user_signed_in? && current_user.has_written?(comment)
+      -#   .board_detail_actions
+      -#     .dropdown
+      -#       = image_tag 'select.png', class: 'dropbtn'
+      -#       .dropdown-content.mini
+      -#         = link_to '編集する', edit_board_path(board)
+      -#         = link_to '削除する', board_path(board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
 
 .container
   .board-list
-    = link_to 'Add New Comment', new_board_task_comment_path(params[:board_id],@task)
+    = link_to 'Add New Comment', new_board_task_comment_path(params[:board_id],@task), class: 'add-board'
