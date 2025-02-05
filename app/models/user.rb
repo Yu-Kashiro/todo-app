@@ -25,6 +25,7 @@ class User < ApplicationRecord
 
   has_many :boards, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :tasks, dependent: :destroy
   has_one :profile, dependent: :destroy
 
 
@@ -36,6 +37,10 @@ class User < ApplicationRecord
     boards.exists?(id: board.id)
   end
 
+  def has_written_task?(task)
+    tasks.exists?(id: task.id)
+  end
+
   def display_name
     profile&.nickname || self.email.split('@').first
   end
@@ -44,7 +49,7 @@ class User < ApplicationRecord
     if profile&.avatar&.attached?
       profile.avatar
     else
-      'User.png'
+      'dummy-eyecatch.png'
     end
   end
 

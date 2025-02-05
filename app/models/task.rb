@@ -18,6 +18,7 @@
 #
 class Task < ApplicationRecord
   belongs_to :board
+  belongs_to :user
   has_one_attached :eye_catch
   has_many :comments, dependent: :destroy
 end

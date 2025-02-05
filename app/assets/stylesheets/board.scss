@@ -13,6 +13,16 @@
   align-items: center;
 }
 
+.comment-item {
+  // background-color: rgba(244, 244, 244, 1);
+  bottom: 4px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .add-board {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -25,7 +35,7 @@
 
 .eye_catch {
   width: 100%;
-  height: 200px;
+  height: 130px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -58,8 +68,10 @@
 }
 
 .board-comment-count{
+  display: flex;
   color: #888;
   font-size: 14px;
+  justify-content: flex-end;
 }
 
 .avatar {

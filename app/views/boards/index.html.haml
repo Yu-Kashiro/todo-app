@@ -14,7 +14,7 @@
             .avatar
               = image_tag board.user.avatar_image, class: 'header_avatar'
           - if user_signed_in? && current_user.has_written?(board)
-            .article_detail_actions
+            .board_detail_actions
               .dropdown
                 = image_tag 'actions.svg', class: 'dropbtn'
                 .dropdown-content.mini
