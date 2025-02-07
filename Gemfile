@@ -21,6 +21,10 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# Gemfile
+
+# 例: 1.15.x 系列を使いたいとき
+gem "ffi", "< 1.17.0"
 
 gem 'hamlit'
 
