@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.7'
 # 例: 1.15.x 系列を使いたいとき
 gem "ffi", "< 1.17.0"
 
+gem 'concurrent-ruby', '1.3.4'
+
 gem 'hamlit'
 
 gem 'devise'
