@@ -7,18 +7,13 @@ class CommentsController < ApplicationController
     board = Board.find(params[:board_id])
     task = Task.find(params[:task_id])
     @comment = task.comments.build(comment_params)
-    @comment.user_id = current_user.id # Assuming you have a current_user method
+    @comment.user_id = current_user.id
     if @comment.save
       redirect_to board_task_path(board,task), notice: '作成できました'
     else
       flash.now[:error] = '作成できませんでした'
       render :new
     end
-  end
-
-  def destroy
-    @comment = Comment.find(params[:id])
-    @comment.destroy
   end
 
   private

@@ -1,9 +1,5 @@
 class TasksController < ApplicationController
 
-  def index
-    @tasks = Task.all
-  end
-
   def new
     board = Board.find(params[:board_id])
     @task = board.tasks.build
@@ -40,7 +36,6 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @comments = @task.comments.all
     @user = User.find(@task.user_id)
-    # binding.pry
   end
 
   def destroy
